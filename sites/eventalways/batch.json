@@ -1,0 +1,18 @@
+{
+  "service": "https://complete-eft-endlessly.ngrok-free.app",
+	"batch": [
+		{ "url": "1" },
+		{ "url": "2" },
+		{ "url": "3" },
+		{ "url": "4" },
+		{ "url": "5" },
+		{ "url": "6" },
+		{ "url": "7" },
+		{ "url": "8" },
+		{ "url": "9" }
+	],
+	"limit": 5,
+	"payload": {
+		"data": 0
+	}
+}

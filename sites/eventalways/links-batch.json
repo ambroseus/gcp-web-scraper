@@ -1,0 +1,23 @@
+{
+  "url": "https://www.eventalways.com/poland",
+  "waitForSelector": "div.ea-event-list",
+  "postprocess": {
+    "sanitize": true,
+    "handler": "let batch=[];$('div.result-block-row').each(function(){let url=$(this).find('h3 > a').attr('href');batch.push({url})});output.batch=batch",
+    "onSuccess": {
+      "service": "https://europe-central2-web-scraper-dev.cloudfunctions.net/web-scraper-batch",
+      "payload": {
+        "service": "https://complete-eft-endlessly.ngrok-free.app",
+				"concurrent": true,
+          "payload": {
+          "waitForSelector": "...",
+          "postprocess": {
+            "sanitize": true,
+            "handler": "..."
+					}
+        }
+      }, 
+      "limit" : 3
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "workspaces": [
+    "functions/*"
+  ],
+  "scripts": {
+    "gcp-build": "node node_modules/puppeteer/install.mjs && tsc",
+    "build": "tsc",
+    "predev-batcher": "tsc",
+    "predev-scraper": "tsc",
+    "predev-sheetwriter": "tsc",
+    "dev-batcher": "functions-framework --target batcher --port 8081",
+    "dev-scraper": "functions-framework --target scraper --port 8082",
+    "dev-sheetwriter": "functions-framework --target sheetwriter --port 8083"
+  },
+  "dependencies": {
+    "@esm2cjs/normalize-url": "^8.0.0",
+    "@google-cloud/functions-framework": "^3.3.0",
+    "@google-cloud/pubsub": "^4.2.0",
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "16.4.0",
+    "googleapis": "^131.0.0",
+    "normalize-html-whitespace": "1.0.0",
+    "puppeteer": "21.7.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "sanitize-html": "2.11.0",
+    "vm2": "3.9.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "lerna": "^8.1.2",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "yarn": "^1.22.0"
+  }
+}

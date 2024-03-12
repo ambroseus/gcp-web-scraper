@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["ESNext"],
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "removeComments": true,
+    "sourceMap": false,
+    "target": "ESNext",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "module": "CommonJS",
+    "rootDir": "./src",
+  },
+  "exclude": [
+    "node_modules/**/*",
+    "dist/**/*",
+    ".vscode/**/*"
+  ]
+}

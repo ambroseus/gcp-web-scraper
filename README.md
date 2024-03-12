@@ -1,1 +1,1 @@
-# gcp-web-scraper
+# web-scraper-gcp

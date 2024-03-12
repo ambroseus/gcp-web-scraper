@@ -1,0 +1,10 @@
+{
+	"data": { 
+    "title": "Event",
+    "kind": "conference",
+    "date": "02-02-2024 18:00",
+    "location": "Poland, Warshaw",
+    "description": "description description description",
+    "image": "http://image_url.com"
+  }
+}
