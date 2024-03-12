@@ -6,7 +6,8 @@
     "dev": "functions-framework --target handler --port 8082",
     "gcp-build": "node node_modules/puppeteer/install.mjs && tsc",
     "build": "tsc",
-    "deploy": "./deploy.sh"
+    "deploy": "./deploy.sh",
+    "package-lock": "npm i --package-lock-only --workspaces false"
   },
   "dependencies": {
     "@esm2cjs/normalize-url": "^8.0.0",
