@@ -1,5 +1,5 @@
-import { renderPage } from '../../../render'
-import { getNormalizedUrl } from '../../../utils'
+import { renderPage } from '../render'
+import { getNormalizedUrl } from '../utils'
 
 export async function actionParseHtml({ url, waitForSelector = '', options = {} }): Promise<any> {
   const response = await renderPage({

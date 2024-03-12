@@ -10,14 +10,10 @@
     "removeComments": true,
     "sourceMap": false,
     "target": "ESNext",
-    "outDir": "dist",
-    "baseUrl": ".",
     "module": "CommonJS",
     "rootDir": "./src",
+    "outDir": "dist",
+    "baseUrl": "."
   },
-  "exclude": [
-    "node_modules/**/*",
-    "dist/**/*",
-    ".vscode/**/*"
-  ]
+  "exclude": ["node_modules/**/*", "dist/**/*", ".vscode/**/*"]
 }

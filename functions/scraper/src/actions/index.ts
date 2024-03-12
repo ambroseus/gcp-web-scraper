@@ -1,7 +1,7 @@
 import { actionParseHtml } from './actionParseHtml'
 import { actionPostProcess } from './actionPostProcess'
 import { actionCallService } from './actionCallService'
-import { isObj } from '../../../utils'
+import { isObj } from '../utils'
 
 export async function parseHtml(req) {
   const request: any = req.body || {}

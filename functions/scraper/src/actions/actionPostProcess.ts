@@ -1,11 +1,11 @@
 import normalizeWhitespace from 'normalize-html-whitespace'
 import sanitizeHtml from 'sanitize-html'
-import { getNormalizedUrl } from '../../../utils'
+import { getNormalizedUrl } from '../utils'
 import { load } from 'cheerio'
 import { VM } from 'vm2'
-import { defaultVMOptions, defaultSanitizeHtmlOptions } from '../../../config'
-import { isObj } from '../../../utils'
-import { ID } from '../../../ids'
+import { defaultVMOptions, defaultSanitizeHtmlOptions } from '../config'
+import { isObj } from '../utils'
+import { ID } from '../ids'
 
 export function actionPostProcess({
   url = '',
