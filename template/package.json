@@ -1,0 +1,19 @@
+{
+  "main": "dist/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "predev": "tsc",
+    "dev": "functions-framework --target handler --port 8080",
+    "gcp-build": "tsc",
+    "build": "tsc",
+    "deploy": "./deploy.sh",
+    "package-lock": "npm i --package-lock-only --workspaces false"
+  },
+  "dependencies": {
+    "dotenv": "16.4.5",
+    "googleapis": "134.0.0"
+  },
+  "devDependencies": {
+    "typescript": "5.4.2"
+  }
+}

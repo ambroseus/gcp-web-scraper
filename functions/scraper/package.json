@@ -10,21 +10,21 @@
     "package-lock": "npm i --package-lock-only --workspaces false"
   },
   "dependencies": {
-    "@esm2cjs/normalize-url": "^8.0.0",
-    "@google-cloud/functions-framework": "^3.3.0",
-    "@google-cloud/pubsub": "^4.2.0",
-    "axios": "^1.6.7",
-    "cheerio": "^1.0.0-rc.12",
-    "dotenv": "16.4.0",
-    "googleapis": "^131.0.0",
+    "@esm2cjs/normalize-url": "8.0.0",
+    "@google-cloud/functions-framework": "3.3.0",
+    "@google-cloud/pubsub": "4.3.3",
+    "axios": "1.6.7",
+    "cheerio": "1.0.0-rc.12",
+    "dotenv": "16.4.5",
+    "googleapis": "134.0.0",
     "normalize-html-whitespace": "1.0.0",
-    "puppeteer": "21.7.0",
-    "puppeteer-extra": "^3.3.6",
-    "puppeteer-extra-plugin-stealth": "^2.11.2",
-    "sanitize-html": "2.11.0",
+    "puppeteer": "22.4.1",
+    "puppeteer-extra": "3.3.6",
+    "puppeteer-extra-plugin-stealth": "2.11.2",
+    "sanitize-html": "2.12.1",
     "vm2": "3.9.4"
   },
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "typescript": "5.4.2"
   }
 }
