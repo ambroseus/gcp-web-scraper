@@ -2,6 +2,8 @@ import { type HttpFunction } from '@google-cloud/functions-framework'
 import { parseHtml } from './actions'
 import { launchBrowser } from './render'
 
+let browser
+
 export const handler: HttpFunction = async (req, res) => {
   if (req.method === 'GET') {
     try {
@@ -21,8 +23,10 @@ export const handler: HttpFunction = async (req, res) => {
   console.log(`req.body:`, req.body)
 
   try {
-    await launchBrowser()
-    const response = await parseHtml(req)
+    if (!browser) {
+      browser = await launchBrowser()
+    }
+    const response = await parseHtml(req, browser)
     console.log(`response:`, response)
     res.send(response)
   } catch (e) {

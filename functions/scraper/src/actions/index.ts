@@ -3,7 +3,7 @@ import { actionPostProcess } from './actionPostProcess'
 import { actionCallService } from './actionCallService'
 import { isObj } from '../utils'
 
-export async function parseHtml(req) {
+export async function parseHtml(req, browser) {
   const request: any = req.body || {}
 
   try {
@@ -14,6 +14,7 @@ export async function parseHtml(req) {
     let response: any = {}
 
     response = await actionParseHtml({
+      browser,
       url,
       waitForSelector,
       options,

@@ -8,20 +8,18 @@ import { ID } from '../ids'
 
 puppeteer.use(StealthPlugin())
 
-let browser = null
-
 export async function launchBrowser() {
   const launchOptions = {
     ...defaultBrowserLaunchOptions,
   }
 
-  browser = await puppeteer.launch(launchOptions)
+  const browser = await puppeteer.launch(launchOptions)
   console.log(`launch chromium: ${JSON.stringify(launchOptions, null, 2)}`)
 
   return browser
 }
 
-export async function renderPage({ url = '', waitForSelector = '', options = {} }) {
+export async function renderPage({ browser, url = '', waitForSelector = '', options = {} }) {
   let page
 
   try {
