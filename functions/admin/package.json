@@ -1,0 +1,13 @@
+{
+  "name": "admin",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "package-lock": "npm i --workspaces false"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

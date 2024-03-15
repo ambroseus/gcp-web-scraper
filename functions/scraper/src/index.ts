@@ -1,6 +1,6 @@
 import { type HttpFunction } from '@google-cloud/functions-framework'
-import { parseHtml } from './actions'
 import { launchBrowser } from './render'
+import { parseHtml } from './actions'
 
 let browser
 

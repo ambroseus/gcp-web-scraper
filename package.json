@@ -1,8 +1,10 @@
 {
   "private": true,
-  "workspaces": [
-    "functions/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "functions/*"
+    ]
+  },
   "scripts": {
     "postinstall": "lerna run --stream --parallel package-lock"
   },
