@@ -2,7 +2,12 @@
   "name": "admin",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "dev:docker": "docker run -p 3000:3000 gcp-web-scraper-admin",
+    "build:local": "next build",
+    "build:docker": "docker build -t gcp-web-scraper-admin .",
+    "build": "gcloud builds submit --tag gcr.io/web-scraper-dev/admin --project web-scraper-dev",
+    "predeploy": "npm run build",
+    "deploy": "./deploy.sh",
     "package-lock": "npm i --workspaces false"
   },
   "dependencies": {
