@@ -21,7 +21,7 @@
     "puppeteer-extra": "3.3.6",
     "puppeteer-extra-plugin-stealth": "2.11.2",
     "sanitize-html": "2.12.1",
-    "vm2": "3.9.4"
+    "vm2": "^3.9.19"
   },
   "devDependencies": {
     "typescript": "5.4.2"
