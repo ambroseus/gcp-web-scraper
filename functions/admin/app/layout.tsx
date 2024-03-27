@@ -9,8 +9,8 @@ import '@mantine/dates/styles.css'
 import 'mantine-react-table/styles.css'
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
+  title: 'web-scraper admin',
+  // description: 'I am using Mantine with Next.js!',
 }
 
 export default function RootLayout({ children }: { children: any }) {
