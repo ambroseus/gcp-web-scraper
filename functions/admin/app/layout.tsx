@@ -1,9 +1,9 @@
-import React from 'react'
 import { MantineProvider, ColorSchemeScript } from '@mantine/core'
 import { Notifications } from '@mantine/notifications'
-import { theme } from '@/theme'
+import { theme } from './theme'
 
 import '@mantine/core/styles.css'
+import '@mantine/dates/styles.css'
 import '@mantine/notifications/styles.css'
 import '@mantine/dates/styles.css'
 import 'mantine-react-table/styles.css'
