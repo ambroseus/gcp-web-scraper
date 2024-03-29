@@ -13,17 +13,17 @@
   "dependencies": {
     "@esm2cjs/normalize-url": "8.0.0",
     "@google-cloud/functions-framework": "3.3.0",
-    "axios": "1.6.7",
+    "axios": "1.6.8",
     "cheerio": "1.0.0-rc.12",
     "dotenv": "16.4.5",
     "normalize-html-whitespace": "1.0.0",
-    "puppeteer": "22.4.1",
+    "puppeteer": "22.6.1",
     "puppeteer-extra": "3.3.6",
     "puppeteer-extra-plugin-stealth": "2.11.2",
-    "sanitize-html": "2.12.1",
+    "sanitize-html": "2.13.0",
     "vm2": "^3.9.19"
   },
   "devDependencies": {
-    "typescript": "5.4.2"
+    "typescript": "5.4.3"
   }
 }
