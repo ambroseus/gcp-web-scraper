@@ -1,9 +1,9 @@
-import fbAdmin, { ServiceAccount } from 'firebase-admin'
+import fbAdmin from 'firebase-admin'
 
-import serviceAccount from './serviceAccountKey.json'
+import { serviceAccount } from './credentials'
 
 fbAdmin.initializeApp({
-  credential: fbAdmin.credential.cert(serviceAccount as ServiceAccount),
+  credential: fbAdmin.credential.cert(serviceAccount),
   databaseURL: 'https://web-configurator-react-default-rtdb.europe-west1.firebasedatabase.app',
 })
 
