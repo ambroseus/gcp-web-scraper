@@ -4,11 +4,12 @@
   "type": "commonjs",
   "scripts": {
     "predev": "tsc",
-    "dev": "functions-framework --target handler --port 8082",
-    "gcp-build": "node node_modules/puppeteer/install.mjs && tsc",
+    "dev": "functions-framework --target handler --port 8080",
+    "dev:docker": "docker run -p 8080:8080 gcp-web-scraper",
     "build": "tsc",
+    "build:docker": "docker build -t gcp-web-scraper .",
     "deploy": "./deploy.sh",
-    "package-lock": "npm i --package-lock-only --workspaces false"
+    "package-lock": "npm i --workspaces false"
   },
   "dependencies": {
     "@esm2cjs/normalize-url": "8.0.0",
