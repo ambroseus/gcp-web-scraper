@@ -18,8 +18,20 @@ events.get('/', async (req, res) => {
   }
 })
 
-events.get('/:eventId', (req, res) => {
-  res.send(`get event ${req.params.eventId}`)
+events.get('/:eventId', async (req, res) => {
+  // TODO: validate request with some library (joi?)
+
+  // TODO: abstract away (to repository?)
+  const event = await db.collection('events').doc(req.params.eventId).get()
+
+  if (!event.exists) {
+    return res.status(404).json({ error: 'Event not found' }) // TODO: consider if I need a message
+  }
+
+  return res.status(200).json({ // TODO: refactor to .response class
+    id: event.id,
+    ...event.data(),
+  })
 })
 
 events.post('/', (req, res) => {
