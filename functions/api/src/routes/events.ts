@@ -1,5 +1,6 @@
 import express from 'express'
 import { db } from '../db'
+import { param, validationResult } from 'express-validator'
 
 export const events = express.Router()
 
@@ -18,8 +19,12 @@ events.get('/', async (req, res) => {
   }
 })
 
-events.get('/:eventId', async (req, res) => {
-  // TODO: validate request with some library (joi?)
+events.get('/:eventId', param('eventId').notEmpty().isString(), async (req, res) => {
+  // TODO: add middleware to abstract away validation
+  const validationErrors = validationResult(req)
+  if (!validationErrors.isEmpty()) {
+    return res.status(422).json({ errors: validationErrors.array() })
+  }
 
   // TODO: abstract away (to repository?)
   const event = await db.collection('events').doc(req.params.eventId).get()
@@ -28,7 +33,8 @@ events.get('/:eventId', async (req, res) => {
     return res.status(404).json({ error: 'Event not found' }) // TODO: consider if I need a message
   }
 
-  return res.status(200).json({ // TODO: refactor to .response class
+  return res.status(200).json({
+    // TODO: refactor to .response class
     id: event.id,
     ...event.data(),
   })

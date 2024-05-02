@@ -5,22 +5,25 @@
   "scripts": {
     "predev": "tsc",
     "dev": "functions-framework --target api --port 5555",
+    "watch": "tsc-watch --onSuccess \"npm run dev\"",
     "gcp-build": "tsc",
     "build": "tsc",
     "deploy": "./deploy.sh",
     "package-lock": "npm i --package-lock-only --workspaces false"
   },
   "dependencies": {
+    "axios": "0.24.0",
+    "body-parser": "1.20.2",
+    "dotenv": "16.4.5",
+    "express": "4.17.2",
+    "express-validator": "7.0.1",
     "firebase": "10.11.0",
     "firebase-admin": "12.1.0",
-    "dotenv": "16.4.5",
-    "googleapis": "134.0.0",
-    "express": "4.17.2",
-    "body-parser": "1.20.2",
-    "axios": "0.24.0"
+    "googleapis": "134.0.0"
   },
   "devDependencies": {
     "@types/node": "16.11.15",
+    "tsc-watch": "^6.2.0",
     "typescript": "5.4.2"
   }
 }
