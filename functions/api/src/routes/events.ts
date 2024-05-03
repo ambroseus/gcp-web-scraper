@@ -1,6 +1,8 @@
 import express from 'express'
 import { db } from '../db'
-import { param, validationResult } from 'express-validator'
+import { validate } from '../api/middlewares/validation.middleware'
+import { EventsRepository } from '../db/events.repository'
+import { eventIdParamRule } from '../api/rules/event.rules'
 
 export const events = express.Router()
 
@@ -12,32 +14,20 @@ events.get('/', async (req, res) => {
       id: doc.id,
       ...doc.data(),
     }))
-    console.log(data)
     return res.status(200).json(data)
   } catch (error) {
     return res.status(500).json({ general: 'Something went wrong, please try again' })
   }
 })
 
-events.get('/:eventId', param('eventId').notEmpty().isString(), async (req, res) => {
-  // TODO: add middleware to abstract away validation
-  const validationErrors = validationResult(req)
-  if (!validationErrors.isEmpty()) {
-    return res.status(422).json({ errors: validationErrors.array() })
+events.get('/:eventId', validate([eventIdParamRule]), async (req, res) => {
+  const event = await new EventsRepository().getById(req.params.eventId)
+
+  if (!event) {
+    return res.status(404).json()
   }
 
-  // TODO: abstract away (to repository?)
-  const event = await db.collection('events').doc(req.params.eventId).get()
-
-  if (!event.exists) {
-    return res.status(404).json({ error: 'Event not found' }) // TODO: consider if I need a message
-  }
-
-  return res.status(200).json({
-    // TODO: refactor to .response class
-    id: event.id,
-    ...event.data(),
-  })
+  return res.status(200).json(event)
 })
 
 events.post('/', (req, res) => {
