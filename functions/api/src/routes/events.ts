@@ -1,5 +1,8 @@
 import express from 'express'
 import { db } from '../db'
+import { validate } from '../api/middlewares/validation.middleware'
+import { EventsRepository } from '../db/events.repository'
+import { eventIdParamRule } from '../api/rules/event.rules'
 
 export const events = express.Router()
 
@@ -11,15 +14,20 @@ events.get('/', async (req, res) => {
       id: doc.id,
       ...doc.data(),
     }))
-    console.log(data)
     return res.status(200).json(data)
   } catch (error) {
     return res.status(500).json({ general: 'Something went wrong, please try again' })
   }
 })
 
-events.get('/:eventId', (req, res) => {
-  res.send(`get event ${req.params.eventId}`)
+events.get('/:eventId', validate([eventIdParamRule]), async (req, res) => {
+  const event = await new EventsRepository().getById(req.params.eventId)
+
+  if (!event) {
+    return res.status(404).json()
+  }
+
+  return res.status(200).json(event)
 })
 
 events.post('/', (req, res) => {
