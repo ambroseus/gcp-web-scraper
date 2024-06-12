@@ -1,4 +1,4 @@
-import { dataProvider } from '@/api'
+import { dataProvider } from '@/firebase'
 
 export const dynamic = 'force-dynamic' // defaults to auto
 
