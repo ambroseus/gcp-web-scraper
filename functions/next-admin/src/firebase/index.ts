@@ -2,7 +2,7 @@ import { FirebaseDataProvider, FirebaseAuthProvider, RAFirebaseOptions } from '@
 import { firebaseConfig as config } from './credentials'
 
 const options: RAFirebaseOptions = {
-  logging: true,
+  logging: false,
   rootRef: '/',
   persistence: 'local',
 }

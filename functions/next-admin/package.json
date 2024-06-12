@@ -10,12 +10,12 @@
     "package-lock": "npm i --workspaces false"
   },
   "dependencies": {
-    "firebase": "^10.12.2",
+    "firebase": "^9.6.4",
     "next": "^14.2.3",
     "ra-data-json-server": "^4.16.17",
     "react": "^18",
     "react-admin": "next",
-    "@dckit/ra-firebase": "^0.1.6",
+    "@dckit/ra-firebase": "^0.1.7",
     "react-admin-json-view": "^2.0.0",
     "react-dom": "^18"
   },
