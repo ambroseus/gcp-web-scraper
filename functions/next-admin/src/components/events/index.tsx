@@ -5,7 +5,7 @@ import {
   Show,
   Create,
   Edit,
-  // Filter,
+  Filter,
   SimpleShowLayout,
   SimpleForm,
   TextField,
@@ -28,17 +28,29 @@ import {
 //   Url: string
 // }
 
-// const EventFilter = (props: any) => {
-//   return (
-//     <Filter {...props}>
-//       <TextInput label="Search" source="title" alwaysOn />
-//     </Filter>
-//   )
-// }
+const EventFilter = (props: any) => {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ width: 120 }}>Filter</div>
+      <Filter {...props}>
+        <SelectInput
+          source="Status"
+          choices={[
+            { id: 'DRAFT', name: 'DRAFT' },
+            { id: 'VERIFIED', name: 'VERIFIED' },
+          ]}
+          alwaysOn
+        />
+      </Filter>
+      <Filter {...props}>
+        <TextInput source="Kind" alwaysOn />
+      </Filter>
+    </div>
+  )
+}
 
 export const EventList = (props: any) => (
-  // <List {...props} filters={<EventFilter />}>
-  <List {...props}>
+  <List {...props} filters={<EventFilter />}>
     <Datagrid>
       <TextField source="Status" />
       <TextField source="Country" />
