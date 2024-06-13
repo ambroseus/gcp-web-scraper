@@ -15,7 +15,7 @@
     "ra-data-json-server": "^4.16.17",
     "react": "^18",
     "react-admin": "next",
-    "@dckit/ra-firebase": "^0.1.7",
+    "@dckit/ra-firebase": "^0.1.8",
     "react-admin-json-view": "^2.0.0",
     "react-dom": "^18"
   },
