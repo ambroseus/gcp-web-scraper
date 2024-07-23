@@ -18,9 +18,10 @@ export const defaultBrowserLaunchOptions: PuppeteerLaunchOptions = {
     isMobile: false,
     width: 1920,
   },
-  headless: true,
+  // headless: 'new',
   devtools: false,
   args: [
+    '--headless=new',
     '--allow-running-insecure-content',
     '--autoplay-policy=user-gesture-required',
     '--disable-component-update',

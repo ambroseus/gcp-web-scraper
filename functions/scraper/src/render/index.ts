@@ -27,18 +27,19 @@ export async function renderPage({ browser, url = '', waitForSelector = '', opti
       ...defaultPageNavigationOptions,
       ...options[ID.optPageNavigation],
     }
-
+    
+    console.log(`renderPage > pageNavigationOptions:`, pageNavigationOptions)
     page = await browser.newPage()
 
     const ua =
       'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'
     await page.setUserAgent(ua)
-
+    
+    console.log('goto: ', url)
     //await page.setCacheEnabled(true)
     await page.setRequestInterception(true)
     page.on('request', onRequest)
 
-    console.log('goto: ', url)
     const pageResponse = await page.goto(url, pageNavigationOptions)
     // if (!isHtml(pageResponse)) {
     //   throw new Error('Url content is not text/html')

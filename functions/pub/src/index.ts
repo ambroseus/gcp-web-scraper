@@ -3,6 +3,8 @@ import { PubSub } from '@google-cloud/pubsub'
 
 const HTTP_NO_METHOD_SUPPORTED = 405
 
+// https://europe-central2-web-scraper-dev.cloudfunctions.net/web-scraper
+
 export const handler: HttpFunction = async (req, res) => {
   if (req.method === 'GET') {
     res.send('OK')
